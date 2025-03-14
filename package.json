@@ -4,9 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "test": "jest",
-  "selenium": "node seleniumTest.js"
-},
+    "test": "jest",
+    "selenium": "node seleniumTest.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -15,6 +15,9 @@
     "selenium-webdriver": "^4.29.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
   }
 }
