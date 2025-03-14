@@ -1,7 +1,12 @@
-import { Builder, By, Key } from 'selenium-webdriver';
+const { Builder, By, Key } = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
 
 async function testGoogle() {
-  let driver = await new Builder().forBrowser('chrome').build();
+  const options = new chrome.Options();
+  options.addArguments('--headless', '--disable-gpu', '--no-sandbox');
+
+  let driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
+
   try {
     await driver.get('https://www.google.com');
     await driver.findElement(By.name('q')).sendKeys('Selenium', Key.RETURN);
